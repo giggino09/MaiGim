@@ -1,0 +1,44 @@
+<div id='powered'>Powered By Carmine</div>
+<div id='admin_container'>
+
+    <div id='test'>
+        <div id='top'>
+            <img src="../../../assets/logo.png" alt=""> 
+            <div id="pulsantiera">
+                    <button mat-raised-button  routerLink="/">Home</button><br>
+                    <button mat-raised-button routerLink="/adduser"><fa name="plus-circle"></fa>Aggiungi Utente</button><br>
+                    <button mat-raised-button routerLink="/addEx" id='addEs'><fa name="plus-circle"></fa>Aggiungi Esercizio</button>
+            </div>
+            
+        </div>
+
+        <div id='list_cont'>
+            <div id='list'>
+                    <div class = 'utente' *ngFor="let item of items | async">
+                        <b>Cognome:</b> {{item.cognome}} <br>
+                        <b>Nome:</b>  {{item.nome}} <br>
+                        <b>Email:</b>  {{item.email}} <br>
+
+                        <div id='pulsanti'>    
+                                
+                            <div class="pulsante" routerLink="/mod/{{item.nickname}}"><fa name="pencil"></fa>Modifica Anagrafica</div>
+                            <div class="pulsante" routerLink="/modScheda/{{item.nickname}}"><fa name="pencil-square-o"></fa>Modifica Scheda</div>
+                            <div class="pulsante del" (click)='deleteUser(item.nickname)'><fa name="trash"></fa>Rimuovi Utente</div>
+                        </div>
+                    </div><br>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+</div>
+
+
+
+  
+
+     
+ 
+  

@@ -1,0 +1,39 @@
+<div id='powered'>Powered By Carmine</div>
+<div id='admin_container'>
+
+    <div id='test'>
+        <div id='top'>
+            <img src="../../../assets/logo.png" alt=""> 
+            
+            
+        </div>
+        <div id="title">
+            Creazione Esercizio
+        </div>
+
+        <div id="campi">
+            <mat-form-field>
+                <input (keyup)="onKeyNome($event)" matInput placeholder="Nome Esercizio">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select placeholder="Categoria" [(value)]="selected">
+                    <mat-option *ngFor="let categoria of categorie" [value]="categoria">
+                        {{ categoria }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+             
+              <button mat-raised-button (click)='tasto()' [disabled]="!validation()"><fa name="plus-circle"></fa>Aggiungi Esercizio</button>
+              <button mat-raised-button routerLink="/adminpanel" id='back'><fa name="arrow-left"></fa>Torna alla lista utenti</button>
+        </div>
+
+       
+        
+
+    </div>
+    
+
+
+</div>
